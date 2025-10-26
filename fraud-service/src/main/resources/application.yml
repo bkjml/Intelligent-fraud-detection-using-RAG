@@ -1,0 +1,42 @@
+server:
+  port: 5000
+
+spring:
+  datasource:
+    url: jdbc:postgresql://{POSTGRES_URL}/{DATABASE_NAME}
+    username: {USERNAME}
+    password: {PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://{KEYCLOAK_URL}/realms/{KEYCLOAK_REALM}
+
+  data:
+    redis:
+      host: {REDIS_URL}
+      port: {REDIS_PORT}
+      password: {REDIS_PASSWORD}
+      ssl:
+        enabled: false
+
+  main:
+    allow-bean-definition-overriding: true
+
+  # External microservice endpoints (AI and RAG)
+external:
+  ai:
+    base-url: http://{AI_SCORE_SERVICE_URL}
+    score-path: /score
+  rag:
+    base-url: http://{RAG_SERVICE_URL}
+    explain-path: /explain
+
+logging:
+  level:
+    root: INFO
