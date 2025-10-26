@@ -1,0 +1,474 @@
+{
+	"info": {
+		"_postman_id": "de193ba8-3ad7-474a-bb48-b069cd585705",
+		"name": "Fraud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16851784",
+		"_collection_link": "https://evoucher-0858.postman.co/workspace/Evoucher-Workspace~d25f4570-18c7-406d-b508-4bd65aa49348/collection/16851784-de193ba8-3ad7-474a-bb48-b069cd585705?action=share&source=collection_link&creator=16851784"
+	},
+	"item": [
+		{
+			"name": "Rules",
+			"item": [
+				{
+					"name": "Enable/Disable Rule",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{fraud_gateway}}/api/fraud/rules/{id}/toggle",
+							"host": [
+								"{{fraud_gateway}}"
+							],
+							"path": [
+								"api",
+								"fraud",
+								"rules",
+								"{id}",
+								"toggle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Rules",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"string\",\r\n  \"type\": \"SIMPLE\",\r\n  \"condition\": \"age > 50\",\r\n  \"operator\": \"string\",\r\n  \"subRules\": \"string\",\r\n  \"enabled\": true,\r\n  \"createdBy\": \"string\",\r\n  \"createdAt\": \"2025-10-26T05:42:05.287Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fraud_gateway}}/api/fraud/rules",
+							"host": [
+								"{{fraud_gateway}}"
+							],
+							"path": [
+								"api",
+								"fraud",
+								"rules"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Rule",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{fraud_gateway}}/api/fraud/rules/{id}",
+							"host": [
+								"{{fraud_gateway}}"
+							],
+							"path": [
+								"api",
+								"fraud",
+								"rules",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Fraud",
+			"item": [
+				{
+					"name": "Evaluate Fraud",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{fraud_gateway}}/api/fraud/evaluate",
+							"host": [
+								"{{fraud_gateway}}"
+							],
+							"path": [
+								"api",
+								"fraud",
+								"evaluate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assign Cases",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{fraud_gateway}}/api/fraud/cases/{id}/assign",
+							"host": [
+								"{{fraud_gateway}}"
+							],
+							"path": [
+								"api",
+								"fraud",
+								"cases",
+								"{id}",
+								"assign"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Cases",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{fraud_gateway}}/api/fraud/cases/list",
+							"host": [
+								"{{fraud_gateway}}"
+							],
+							"path": [
+								"api",
+								"fraud",
+								"cases",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cases",
+			"item": [
+				{
+					"name": "Resolve",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{fraud_gateway}}/api/fraud/cases/{id}/resolve",
+							"host": [
+								"{{fraud_gateway}}"
+							],
+							"path": [
+								"api",
+								"fraud",
+								"cases",
+								"{id}",
+								"resolve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Claim",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{fraud_gateway}}/api/fraud/cases/{id}/claim",
+							"host": [
+								"{{fraud_gateway}}"
+							],
+							"path": [
+								"api",
+								"fraud",
+								"cases",
+								"{id}",
+								"claim"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get my Cases",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{fraud_gateway}}/api/fraud/cases",
+							"host": [
+								"{{fraud_gateway}}"
+							],
+							"path": [
+								"api",
+								"fraud",
+								"cases"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Parse the response JSON",
+							"var jsonData = pm.response.json();",
+							"",
+							"// Check if the response is successful",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Check if the response contains an access token",
+							"pm.test(\"Response contains access token\", function () {",
+							"    pm.expect(jsonData).to.have.property('access_token');",
+							"});",
+							"",
+							"// Set the access token in the environment",
+							"if (jsonData.access_token) {",
+							"    pm.environment.set(\"access_token\", jsonData.access_token);",
+							"    console.log(\"Access token saved to environment\");",
+							"}",
+							"",
+							"// Set the refresh token in the environment if it exists",
+							"if (jsonData.refresh_token) {",
+							"    pm.environment.set(\"refresh_token\", jsonData.refresh_token);",
+							"    console.log(\"Refresh token saved to environment\");",
+							"}",
+							"",
+							"// Log token expiration information",
+							"if (jsonData.expires_in) {",
+							"    console.log(\"Token expires in \" + jsonData.expires_in + \" seconds\");",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{clientId}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{client_secret}}",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{keycloak}}/realms/{{realm}}/protocol/openid-connect/token",
+					"host": [
+						"{{keycloak}}"
+					],
+					"path": [
+						"realms",
+						"{{realm}}",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				},
+				"description": "Get an access token using client credentials flow"
+			},
+			"response": []
+		},
+		{
+			"name": "Log out",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "{{client_id}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{client_secret}}",
+							"type": "text"
+						},
+						{
+							"key": "refresh_token",
+							"value": "{{refresh_token}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{keycloak}}/realms/{{realm}}/protocol/openid-connect/logout",
+					"host": [
+						"{{keycloak}}"
+					],
+					"path": [
+						"realms",
+						"{{realm}}",
+						"protocol",
+						"openid-connect",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alert",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{fraud_gateway}}/api/fraud/alerts/stream",
+					"host": [
+						"{{fraud_gateway}}"
+					],
+					"path": [
+						"api",
+						"fraud",
+						"alerts",
+						"stream"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
