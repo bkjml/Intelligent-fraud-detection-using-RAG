@@ -1,0 +1,3 @@
+fastapi>=0.100.0
+uvicorn[standard]>=0.20.0  # uvicorn is the server to run FastAPI
+pydantic>=2.0.0
