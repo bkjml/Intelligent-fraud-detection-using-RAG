@@ -1,0 +1,63 @@
+server:
+  port: 5000
+
+spring:
+
+  application:
+    name: api-gateway
+
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: {CLIENT_ID}
+            client-secret: {CLIENT_SECRET}
+            scope: openid,profile
+        provider:
+          keycloak:
+            issuer-uri: http://{KEYCLOAK_URL}/realms/{REALM}
+      resourceserver:
+        jwt:
+          issuer-uri: http://{KEYCLOAK_URL}/realms/{REALM}
+
+  cloud:
+    gateway:
+      server:
+        webflux:
+          default-filters:
+            - TokenRelay
+          globalcors:
+            cors-configurations:
+              '[/**]':
+                allowedOrigins:
+                  - "*"
+                allowedMethods:
+                  - GET
+                  - POST
+                  - PUT
+                  - DELETE
+                  - PATCH
+                  - OPTIONS
+                allowedHeaders:
+                  - "*"
+          routes:
+            - id: fraud-service
+              uri: http://{FRAUD_SERVICE_URL}
+              predicates:
+                - Path=/api/v1/fraud/**
+            - id: ai-score-service
+              uri: http://{AI_SCORE_SERVICE_URL}
+              predicates:
+                - Path=/score/**
+            - id: rag-service
+              uri: http://{RAG_SERVICE_URL}
+              predicates:
+                - Path=/explain/**
+
+
+
+# Logging
+logging:
+  level:
+    org.springframework.cloud.gateway: INFO

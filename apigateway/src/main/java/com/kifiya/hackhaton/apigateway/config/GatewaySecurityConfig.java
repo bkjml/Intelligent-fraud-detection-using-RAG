@@ -13,8 +13,6 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 @EnableWebFluxSecurity
 public class GatewaySecurityConfig {
 
-    @Autowired
-    private KeycloakRealmRoleConverter keycloakRealmRoleConverter;
     @Bean
     public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
         http
