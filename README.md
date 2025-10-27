@@ -352,7 +352,6 @@ to deliver **fast**, **explainable**, and **scalable** fraud prevention.
 
 <img width="1900" height="894" alt="Landing page" src="https://github.com/user-attachments/assets/3f5fb022-7ee8-4fb1-b635-023ad8e3a2a2" />
 
-<img width="1917" height="894" alt="Rules Engnie" src="https://github.com/user-attachments/assets/e6426cc2-df57-4caf-b11a-b416f01f90b1" />
 
 <img width="1919" height="889" alt="System Orchestration" src="https://github.com/user-attachments/assets/e12e5056-a484-4507-9054-79460db74e43" />
 <img width="1915" height="898" alt="Case management" src="https://github.com/user-attachments/assets/83f03442-280d-458c-b9e1-529428080591" />
