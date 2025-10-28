@@ -277,9 +277,10 @@ spring:
 | Service | Method | Endpoint | Description |
 |----------|---------|-----------|-------------|
 | Gateway | GET | `/actuator/health` | Health check |
-| Fraud Service | POST | `/fraud/check` | Run fraud detection |
+| Fraud Service | POST | `/fraud/evaluate` | Run fraud detection |
 | Fraud Service | GET | `/fraud/alerts/stream` | Real-time fraud alerts |
-| AI Service | POST | `/predict` | AI model fraud probability |
+| AI Service | POST | `/score` | AI model fraud probability |
+| RAG Service | POST | `/explain` | AI model reasoning |
 
 ---
 
@@ -326,14 +327,7 @@ Access:
 | **Caching Enhancements** | Redis TTL per transaction type |
 | **Streaming Integration** | Kafka for distributed event processing |
 | **Dashboard UI** | Live alert dashboard for analysts |
-
----
-
-## 👨‍💻 Contributors
-**Team:** _Hackathon Team - Eta — Kifiya & Friends_  
-- Mathias — Backend & Architecture  
-- Yonatan — AI & FastAPI Service  
-- Yonas — Frontend & DevOps 
+ 
 
 ---
 
